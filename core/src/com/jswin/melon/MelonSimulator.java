@@ -41,12 +41,14 @@ public class MelonSimulator extends ApplicationAdapter {
 			Gdx.graphics.setWindowedMode(1280,720);
 		}
 
+		//rendering
 		batch.begin();
 		for (Melon m : melon) {
 			m.update(batch);
 		}
 		batch.end();
 
+		//spawn melons
 		if(Gdx.input.isButtonPressed(Input.Buttons.RIGHT)){
 			mousePos=new Vector3(Gdx.input.getX(),Gdx.graphics.getHeight()-Gdx.input.getY(),0);
 			Melon newMelon = new Melon(mousePos.x, mousePos.y);

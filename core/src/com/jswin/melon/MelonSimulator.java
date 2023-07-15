@@ -17,6 +17,8 @@ public class MelonSimulator extends ApplicationAdapter {
 	List<Melon> melon;
 	Vector3 mousePos;
 
+	//REMEMBER TO ADD DELTA TIME
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
@@ -41,8 +43,8 @@ public class MelonSimulator extends ApplicationAdapter {
 		}
 
 		batch.begin();
-		for(int i=0; i<melon.size(); i++){
-			melon.get(i).update(batch);
+		for (Melon m : melon) {
+			m.update(batch);
 		}
 		batch.end();
 
@@ -56,8 +58,8 @@ public class MelonSimulator extends ApplicationAdapter {
 	@Override
 	public void dispose () {
 		batch.dispose();
-		for(int i=0; i<melon.size(); i++){
-			melon.get(i).dispose();
+		for (Melon m : melon) {
+			m.dispose();
 		}
 	}
 }

@@ -9,13 +9,13 @@ public class Melon {
     private Rectangle rect;
     private Texture img;
 
-    public Melon(){
+    public Melon(float x, float y){
         img=new Texture(Gdx.files.internal("melon.png"));
         rect=new Rectangle();
         rect.width=104;
         rect.height=114;
-        rect.x=100;
-        rect.y=100;
+        rect.x=x;
+        rect.y=y;
     }
 
     public void update(SpriteBatch batch){

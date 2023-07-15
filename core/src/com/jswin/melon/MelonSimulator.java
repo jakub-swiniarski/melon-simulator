@@ -1,31 +1,63 @@
 package com.jswin.melon;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MelonSimulator extends ApplicationAdapter {
 	SpriteBatch batch;
-	Melon m;
+	boolean fullscreen;
+	List<Melon> melon;
+	Vector3 mousePos;
 
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		m=new Melon();
+		fullscreen=false;
+
+		melon=new ArrayList<Melon>();
 	}
 
 	@Override
 	public void render () {
 		ScreenUtils.clear(0, 0, 0, 1);
+
+		//fullscreen on/off
+		if(Gdx.input.isKeyJustPressed(Input.Keys.F11)){
+			fullscreen=!fullscreen;
+		}
+		if(fullscreen){
+			Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
+		}
+		else{
+			Gdx.graphics.setWindowedMode(1280,720);
+		}
+
 		batch.begin();
-		m.update(batch);
+		for(int i=0; i<melon.size(); i++){
+			melon.get(i).update(batch);
+		}
 		batch.end();
+
+		if(Gdx.input.isButtonPressed(Input.Buttons.RIGHT)){
+			mousePos=new Vector3(Gdx.input.getX(),Gdx.graphics.getHeight()-Gdx.input.getY(),0);
+			Melon newMelon = new Melon(mousePos.x, mousePos.y);
+			melon.add(newMelon);
+		}
 	}
 	
 	@Override
 	public void dispose () {
 		batch.dispose();
-		m.dispose();
+		for(int i=0; i<melon.size(); i++){
+			melon.get(i).dispose();
+		}
 	}
 }

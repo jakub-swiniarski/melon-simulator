@@ -3,6 +3,7 @@ package com.jswin.melon;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector3;
@@ -17,7 +18,7 @@ public class MelonSimulator extends ApplicationAdapter {
 	List<Melon> melon;
 	Vector3 mousePos;
 
-	//REMEMBER TO ADD DELTA TIME
+	//REMEMBER TO ADD DELTA TIME MOVEMENT
 
 	@Override
 	public void create () {

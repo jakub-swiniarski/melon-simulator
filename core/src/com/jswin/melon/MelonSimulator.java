@@ -6,7 +6,9 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 import java.util.ArrayList;
@@ -17,6 +19,7 @@ public class MelonSimulator extends ApplicationAdapter {
 	boolean fullscreen;
 	List<Melon> melon;
 	Vector3 mousePos;
+	//World world;
 
 	//REMEMBER TO ADD DELTA TIME MOVEMENT
 
@@ -25,6 +28,7 @@ public class MelonSimulator extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		fullscreen=false;
 
+		//world = new World(new Vector2(0, -10), true);
 		melon=new ArrayList<Melon>();
 	}
 

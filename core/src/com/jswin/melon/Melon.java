@@ -14,8 +14,8 @@ public class Melon {
         rect=new Rectangle();
         rect.width=104;
         rect.height=114;
-        rect.x=x;
-        rect.y=y;
+        rect.x=x-rect.width/2;
+        rect.y=y-rect.height/2;
     }
 
     public void update(SpriteBatch batch){

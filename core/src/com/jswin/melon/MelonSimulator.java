@@ -15,6 +15,7 @@ public class MelonSimulator extends ApplicationAdapter {
 	boolean fullscreen;
 	List<Melon> melon;
 	Vector3 mousePos;
+	float dt;
 
 	//REMEMBER TO ADD DELTA TIME MOVEMENT
 
@@ -29,6 +30,7 @@ public class MelonSimulator extends ApplicationAdapter {
 	@Override
 	public void render () {
 		ScreenUtils.clear(0, 0, 0, 1);
+		dt=Gdx.graphics.getDeltaTime();
 
 		//spawn melons
 		if(Gdx.input.isButtonJustPressed(Input.Buttons.RIGHT)){
@@ -51,7 +53,7 @@ public class MelonSimulator extends ApplicationAdapter {
 		//rendering
 		batch.begin();
 		for (Melon m : melon) {
-			m.update(batch);
+			m.update(batch, dt);
 		}
 		batch.end();
 	}

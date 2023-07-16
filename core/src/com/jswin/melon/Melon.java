@@ -9,6 +9,7 @@ public class Melon {
     private Rectangle rect;
     private Texture img;
     private boolean falling;
+    private float velocityUP, velocityDOWN, velocityRIGHT, velocityLEFT;
 
     public Melon(float x, float y){
         img=new Texture(Gdx.files.internal("melon.png"));
@@ -20,11 +21,20 @@ public class Melon {
         rect.y=y-rect.height/2;
 
         falling=true;
+        velocityUP=0;
+        velocityDOWN=0;
+        velocityLEFT=0;
+        velocityRIGHT=0;
     }
 
-    public void update(SpriteBatch batch){
+    public void update(SpriteBatch batch, float dt){
         //draw
         batch.draw(img,rect.x,rect.y);
+
+        //gravity
+        if(falling){
+            rect.y-=100*dt;
+        }
     }
 
     public void dispose(){

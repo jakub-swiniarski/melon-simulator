@@ -97,7 +97,7 @@ public class Melon {
             }
             else{
                 velocityRIGHT=-5*Math.abs(rect.x-m.rect.x);
-                m.velocityRIGHT=+5*Math.abs(rect.x-m.rect.x);
+                m.velocityRIGHT=5*Math.abs(rect.x-m.rect.x);
             }
 
             if(rect.y>m.rect.y){

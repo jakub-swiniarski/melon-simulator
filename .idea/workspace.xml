@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f226cd9e-2d0c-419f-83eb-0791dc38db17" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/core/src/com/jswin/melon/Melon.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/jswin/melon/Melon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/jswin/melon/MelonSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/jswin/melon/MelonSimulator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

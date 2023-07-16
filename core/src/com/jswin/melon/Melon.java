@@ -62,6 +62,7 @@ public class Melon {
         rect.x+=velocityRIGHT*dt;
         rect.y+=velocityUP*dt;
 
+        //left & right borders
         if(rect.x<=0){
             rect.x=0;
             velocityRIGHT*=-0.5;
@@ -70,6 +71,9 @@ public class Melon {
             rect.x=Gdx.graphics.getWidth()-rect.width;
             velocityRIGHT*=-0.5;
         }
+
+        //LOSE VELOCITY AFTER TIME!!!
+        //BOUNCE UP
     }
 
     public void dispose(){

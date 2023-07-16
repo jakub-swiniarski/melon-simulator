@@ -63,7 +63,9 @@ public class Melon {
         img.dispose();
     }
 
-    public void checkForCollisions(){
-
+    public void checkForCollisions(Melon m){
+        if(rect.overlaps(m.rect)){
+            //do smth
+        }
     }
 }

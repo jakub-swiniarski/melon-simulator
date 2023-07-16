@@ -41,6 +41,13 @@ public class Melon {
         falling= rect.y > 0;
         if(falling){
             velocityUP-=10*dt;
+
+            if(rotation>=0){
+                rotation+=10*dt;
+            }
+            else{
+                rotation-=10*dt;
+            }
         }
         else if(velocityUP<0){
             velocityUP=0;

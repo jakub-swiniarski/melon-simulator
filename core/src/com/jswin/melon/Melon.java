@@ -9,7 +9,7 @@ public class Melon {
     private Rectangle rect;
     private Texture img;
     private boolean falling;
-    private float velocityUP, velocityDOWN, velocityRIGHT, velocityLEFT;
+    private float velocityUP, velocityRIGHT;
 
     public Melon(float x, float y){
         img=new Texture(Gdx.files.internal("melon.png"));
@@ -22,8 +22,6 @@ public class Melon {
 
         falling=true;
         velocityUP=0;
-        velocityDOWN=0;
-        velocityLEFT=0;
         velocityRIGHT=0;
     }
 
@@ -33,8 +31,12 @@ public class Melon {
 
         //gravity
         if(falling){
-            rect.y-=100*dt;
+            velocityUP-=10*dt;
         }
+
+        //update position
+        rect.x+=velocityRIGHT;
+        rect.y+=velocityUP;
     }
 
     public void dispose(){

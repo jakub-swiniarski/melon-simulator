@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.Rectangle;
 public class Melon {
     private Rectangle rect;
     private Texture img;
+    private boolean falling;
 
     public Melon(float x, float y){
         img=new Texture(Gdx.files.internal("melon.png"));
@@ -19,6 +20,7 @@ public class Melon {
     }
 
     public void update(SpriteBatch batch){
+        //draw
         batch.draw(img,rect.x,rect.y);
     }
 

@@ -30,6 +30,13 @@ public class MelonSimulator extends ApplicationAdapter {
 	public void render () {
 		ScreenUtils.clear(0, 0, 0, 1);
 
+		//spawn melons
+		if(Gdx.input.isButtonJustPressed(Input.Buttons.RIGHT)){
+			mousePos=new Vector3(Gdx.input.getX(),Gdx.graphics.getHeight()-Gdx.input.getY(),0);
+			Melon newMelon = new Melon(mousePos.x, mousePos.y);
+			melon.add(newMelon);
+		}
+
 		//fullscreen on/off
 		if(Gdx.input.isKeyJustPressed(Input.Keys.F11)){
 			fullscreen=!fullscreen;
@@ -47,13 +54,6 @@ public class MelonSimulator extends ApplicationAdapter {
 			m.update(batch);
 		}
 		batch.end();
-
-		//spawn melons
-		if(Gdx.input.isButtonPressed(Input.Buttons.RIGHT)){
-			mousePos=new Vector3(Gdx.input.getX(),Gdx.graphics.getHeight()-Gdx.input.getY(),0);
-			Melon newMelon = new Melon(mousePos.x, mousePos.y);
-			melon.add(newMelon);
-		}
 	}
 	
 	@Override

@@ -16,6 +16,7 @@ public class MelonSimulator extends ApplicationAdapter {
 	List<Melon> melon;
 	Vector3 mousePos;
 	float dt;
+	int id;
 
 	//REMEMBER TO USE DELTA TIME FOR MOVEMENT
 
@@ -25,6 +26,7 @@ public class MelonSimulator extends ApplicationAdapter {
 		fullscreen=false;
 
 		melon=new ArrayList<Melon>();
+		id=0;
 	}
 
 	@Override
@@ -35,8 +37,9 @@ public class MelonSimulator extends ApplicationAdapter {
 		//spawn melons
 		if(Gdx.input.isButtonJustPressed(Input.Buttons.RIGHT)){
 			mousePos=new Vector3(Gdx.input.getX(),Gdx.graphics.getHeight()-Gdx.input.getY(),0);
-			Melon newMelon = new Melon(mousePos.x, mousePos.y);
+			Melon newMelon = new Melon(mousePos.x, mousePos.y,id);
 			melon.add(newMelon);
+			id++;
 		}
 
 		//fullscreen on/off
@@ -54,6 +57,9 @@ public class MelonSimulator extends ApplicationAdapter {
 		batch.begin();
 		for (Melon m : melon) {
 			m.update(batch, dt);
+			for (Melon m2 : melon){
+				m.checkForCollisions(m2);
+			}
 		}
 		batch.end();
 	}

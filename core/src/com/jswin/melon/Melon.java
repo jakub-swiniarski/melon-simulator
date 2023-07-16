@@ -13,10 +13,13 @@ public class Melon {
     private boolean falling;
     private float velocityUP, velocityRIGHT;
     private float rotation;
+    private int id;
 
-    public Melon(float x, float y){
+    public Melon(float x, float y, int id){
         img=new Texture(Gdx.files.internal("melon.png"));
         imgR=new TextureRegion(img,0,0,104,114);
+
+        this.id=id;
 
         rect=new Rectangle();
         rect.width=104;
@@ -40,7 +43,7 @@ public class Melon {
         //gravity
         falling= rect.y > 0;
         if(falling){
-            velocityUP-=10*dt;
+            velocityUP-=10;
 
             //rotate when falling
             if(rotation>=0){
@@ -51,12 +54,22 @@ public class Melon {
             }
         }
         if(rect.y<=0){
+            rect.y=0;
             velocityUP=0;
         }
 
         //update position
-        rect.x+=velocityRIGHT;
-        rect.y+=velocityUP;
+        rect.x+=velocityRIGHT*dt;
+        rect.y+=velocityUP*dt;
+
+        if(rect.x<=0){
+            rect.x=0;
+            velocityRIGHT*=-0.5;
+        }
+        else if(rect.x+rect.width>=Gdx.graphics.getWidth()){
+            rect.x=Gdx.graphics.getWidth()-rect.width;
+            velocityRIGHT*=-0.5;
+        }
     }
 
     public void dispose(){
@@ -64,8 +77,13 @@ public class Melon {
     }
 
     public void checkForCollisions(Melon m){
-        if(rect.overlaps(m.rect)){
-            //do smth
+        if(rect.overlaps(m.rect) && id!=m.id){
+            //retarded, fix later
+            velocityRIGHT-=10*Math.abs(rect.x-m.rect.x);
+            velocityUP-=10*Math.abs(rect.y-m.rect.y);
+
+            m.velocityRIGHT+=10*Math.abs(rect.x-m.rect.x);
+            m.velocityUP+=10*Math.abs(rect.y-m.rect.y);
         }
     }
 }

@@ -85,11 +85,23 @@ public class Melon {
     public void checkForCollisions(Melon m){
         if(rect.overlaps(m.rect) && id!=m.id){
             //retarded, fix later
-            velocityRIGHT-=10*Math.abs(rect.x-m.rect.x);
-            velocityUP-=10*Math.abs(rect.y-m.rect.y);
+            if(rect.x>m.rect.x){
+                velocityRIGHT=10*Math.abs(rect.x-m.rect.x);
+                m.velocityRIGHT=-10*Math.abs(rect.x-m.rect.x);
+            }
+            else{
+                velocityRIGHT=-10*Math.abs(rect.x-m.rect.x);
+                m.velocityRIGHT=+10*Math.abs(rect.x-m.rect.x);
+            }
 
-            m.velocityRIGHT+=10*Math.abs(rect.x-m.rect.x);
-            m.velocityUP+=10*Math.abs(rect.y-m.rect.y);
+            if(rect.y>m.rect.y){
+                velocityUP=10*Math.abs(rect.y-m.rect.y);
+                m.velocityUP=-10*Math.abs(rect.y-m.rect.y);
+            }
+            else{
+                velocityUP=-10*Math.abs(rect.y-m.rect.y);
+                m.velocityUP=10*Math.abs(rect.y-m.rect.y);
+            }
         }
     }
 }

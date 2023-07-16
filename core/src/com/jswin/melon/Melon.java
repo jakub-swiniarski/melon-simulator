@@ -42,6 +42,7 @@ public class Melon {
         if(falling){
             velocityUP-=10*dt;
 
+            //rotate when falling
             if(rotation>=0){
                 rotation+=10*dt;
             }

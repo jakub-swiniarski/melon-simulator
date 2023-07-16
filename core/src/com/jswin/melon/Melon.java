@@ -3,16 +3,20 @@ package com.jswin.melon;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 
 public class Melon {
     private Rectangle rect;
     private Texture img;
+    private TextureRegion imgR;
     private boolean falling;
     private float velocityUP, velocityRIGHT;
+    private float rotation;
 
     public Melon(float x, float y){
         img=new Texture(Gdx.files.internal("melon.png"));
+        imgR=new TextureRegion(img,0,0,104,114);
 
         rect=new Rectangle();
         rect.width=104;
@@ -21,6 +25,7 @@ public class Melon {
         rect.y=y-rect.height/2;
 
         falling=true;
+        rotation=0;
         velocityUP=0;
         velocityRIGHT=0;
     }
@@ -29,7 +34,7 @@ public class Melon {
         //check if visible and draw
         if(rect.x+rect.width>0 && rect.x<Gdx.graphics.getWidth() &&
         rect.y+rect.height>0 && rect.y<Gdx.graphics.getHeight()){
-            batch.draw(img,rect.x,rect.y);
+            batch.draw(imgR,rect.x,rect.y,0,0,rect.width,rect.height,1,1,rotation);
         }
 
         //gravity

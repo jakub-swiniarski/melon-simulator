@@ -26,8 +26,11 @@ public class Melon {
     }
 
     public void update(SpriteBatch batch, float dt){
-        //draw
-        batch.draw(img,rect.x,rect.y);
+        //check if visible and draw
+        if(rect.x+rect.width>0 && rect.x<Gdx.graphics.getWidth() &&
+        rect.y+rect.height>0 && rect.y<Gdx.graphics.getHeight()){
+            batch.draw(img,rect.x,rect.y);
+        }
 
         //gravity
         if(falling){

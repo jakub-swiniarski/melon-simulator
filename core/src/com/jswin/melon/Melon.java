@@ -7,9 +7,9 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 
 public class Melon {
-    private Rectangle rect;
-    private Texture img;
-    private TextureRegion imgR;
+    private final Rectangle rect;
+    private final Texture img;
+    private final TextureRegion imgR;
     private boolean falling;
     private float velocityUP, velocityRIGHT;
     private float rotation;

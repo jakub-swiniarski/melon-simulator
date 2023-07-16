@@ -17,7 +17,7 @@ public class MelonSimulator extends ApplicationAdapter {
 	Vector3 mousePos;
 	float dt;
 
-	//REMEMBER TO ADD DELTA TIME MOVEMENT
+	//REMEMBER TO USE DELTA TIME FOR MOVEMENT
 
 	@Override
 	public void create () {

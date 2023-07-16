@@ -73,7 +73,9 @@ public class Melon {
         }
 
         //LOSE VELOCITY AFTER TIME!!!
-        //BOUNCE UP
+        //BOUNCE UP AFTER FALLING
+        //ROTATE WHEN MOVING
+        //WRONG ROTATION AXIS
     }
 
     public void dispose(){

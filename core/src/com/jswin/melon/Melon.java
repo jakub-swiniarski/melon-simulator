@@ -12,11 +12,14 @@ public class Melon {
 
     public Melon(float x, float y){
         img=new Texture(Gdx.files.internal("melon.png"));
+
         rect=new Rectangle();
         rect.width=104;
         rect.height=114;
         rect.x=x-rect.width/2;
         rect.y=y-rect.height/2;
+
+        falling=true;
     }
 
     public void update(SpriteBatch batch){

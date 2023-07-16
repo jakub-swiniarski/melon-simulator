@@ -33,8 +33,12 @@ public class Melon {
         }
 
         //gravity
+        falling= rect.y > 0;
         if(falling){
             velocityUP-=10*dt;
+        }
+        else if(velocityUP<0){
+            velocityUP=0;
         }
 
         //update position

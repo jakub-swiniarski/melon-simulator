@@ -13,7 +13,7 @@ public class Melon {
     private boolean falling;
     private float velocityUP, velocityRIGHT;
     private float rotation;
-    private int id;
+    private final int id;
 
     public Melon(float x, float y, int id){
         img=new Texture(Gdx.files.internal("melon.png"));

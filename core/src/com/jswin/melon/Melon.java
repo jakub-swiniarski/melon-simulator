@@ -73,12 +73,12 @@ public class Melon {
         }
 
         if(velocityRIGHT>0){
-            velocityRIGHT-=3;
+            velocityRIGHT-=5;
         }
         else if(velocityRIGHT<0){
-            velocityRIGHT+=3;
+            velocityRIGHT+=5;
         }
-        //LOSE VELOCITY AFTER TIME!!!
+
         //BOUNCE UP AFTER FALLING
         //ROTATE WHEN MOVING
         //WRONG ROTATION AXIS
@@ -92,21 +92,21 @@ public class Melon {
         if(rect.overlaps(m.rect) && id!=m.id){
             //retarded, fix later
             if(rect.x>m.rect.x){
-                velocityRIGHT=10*Math.abs(rect.x-m.rect.x);
-                m.velocityRIGHT=-10*Math.abs(rect.x-m.rect.x);
+                velocityRIGHT=5*Math.abs(rect.x-m.rect.x);
+                m.velocityRIGHT=-5*Math.abs(rect.x-m.rect.x);
             }
             else{
-                velocityRIGHT=-10*Math.abs(rect.x-m.rect.x);
-                m.velocityRIGHT=+10*Math.abs(rect.x-m.rect.x);
+                velocityRIGHT=-5*Math.abs(rect.x-m.rect.x);
+                m.velocityRIGHT=+5*Math.abs(rect.x-m.rect.x);
             }
 
             if(rect.y>m.rect.y){
-                velocityUP=10*Math.abs(rect.y-m.rect.y);
-                m.velocityUP=-10*Math.abs(rect.y-m.rect.y);
+                velocityUP=5*Math.abs(rect.y-m.rect.y);
+                m.velocityUP=-5*Math.abs(rect.y-m.rect.y);
             }
             else{
-                velocityUP=-10*Math.abs(rect.y-m.rect.y);
-                m.velocityUP=10*Math.abs(rect.y-m.rect.y);
+                velocityUP=-5*Math.abs(rect.y-m.rect.y);
+                m.velocityUP=5*Math.abs(rect.y-m.rect.y);
             }
         }
     }

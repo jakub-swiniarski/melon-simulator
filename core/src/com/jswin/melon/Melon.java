@@ -50,7 +50,7 @@ public class Melon {
                 rotation-=10*dt;
             }
         }
-        else if(velocityUP<0){
+        if(rect.y<=0){
             velocityUP=0;
         }
 

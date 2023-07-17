@@ -97,21 +97,21 @@ public class Melon {
         if(rect.overlaps(m.rect) && id!=m.id){
             //retarded, fix later
             if(rect.x>m.rect.x){
-                velocityRIGHT=5*Math.abs(rect.x-m.rect.x);
-                m.velocityRIGHT=-5*Math.abs(rect.x-m.rect.x);
+                velocityRIGHT+=Math.abs(rect.x-m.rect.x);
+                m.velocityRIGHT-=Math.abs(rect.x-m.rect.x);
             }
             else{
-                velocityRIGHT=-5*Math.abs(rect.x-m.rect.x);
-                m.velocityRIGHT=5*Math.abs(rect.x-m.rect.x);
+                velocityRIGHT-=Math.abs(rect.x-m.rect.x);
+                m.velocityRIGHT+=Math.abs(rect.x-m.rect.x);
             }
 
             if(rect.y>m.rect.y){
-                velocityUP=5*Math.abs(rect.y-m.rect.y);
-                m.velocityUP=-5*Math.abs(rect.y-m.rect.y);
+                velocityUP+=Math.abs(rect.y-m.rect.y);
+                m.velocityUP-=Math.abs(rect.y-m.rect.y);
             }
             else{
-                velocityUP=-5*Math.abs(rect.y-m.rect.y);
-                m.velocityUP=5*Math.abs(rect.y-m.rect.y);
+                velocityUP-=Math.abs(rect.y-m.rect.y);
+                m.velocityUP+=Math.abs(rect.y-m.rect.y);
             }
         }
     }

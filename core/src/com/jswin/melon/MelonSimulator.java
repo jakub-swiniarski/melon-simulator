@@ -18,8 +18,6 @@ public class MelonSimulator extends ApplicationAdapter {
 	float dt;
 	int id;
 
-	//REMEMBER TO USE DELTA TIME FOR MOVEMENT
-
 	@Override
 	public void create () {
 		batch = new SpriteBatch();

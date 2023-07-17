@@ -77,12 +77,16 @@ public class Melon {
             velocityRIGHT*=-0.5;
         }
 
+        //lose velocity after time
         if(velocityRIGHT>0){
             velocityRIGHT-=5;
         }
         else if(velocityRIGHT<0){
             velocityRIGHT+=5;
         }
+
+        //rotate when moving horizontally
+        rotation-=0.05*velocityRIGHT;
 
         //BOUNCE UP AFTER FALLING
         //ROTATE WHEN MOVING

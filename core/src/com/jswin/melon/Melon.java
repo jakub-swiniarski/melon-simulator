@@ -37,7 +37,12 @@ public class Melon {
         //check if visible and draw
         if(rect.x+rect.width>0 && rect.x<Gdx.graphics.getWidth() &&
         rect.y+rect.height>0 && rect.y<Gdx.graphics.getHeight()){
-            batch.draw(imgR,rect.x,rect.y,0,0,rect.width,rect.height,1,1,rotation);
+            // ----------IMPORTANT----------
+            // ORIGIN X AND ORIGIN Y ARE
+            // USED TO SHIFT THE ROTATION
+            // AXIS!!!
+            //------------------------------
+            batch.draw(imgR,rect.x,rect.y,rect.width/2,rect.height/2,rect.width,rect.height,1,1,rotation);
         }
 
         //gravity

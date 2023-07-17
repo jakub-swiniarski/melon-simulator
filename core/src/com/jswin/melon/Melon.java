@@ -86,7 +86,7 @@ public class Melon {
 
         //BOUNCE UP AFTER FALLING
         //ROTATE WHEN MOVING
-        //WRONG ROTATION AXIS
+        //LEFT CLICK - PICK MELON UP
     }
 
     public void dispose(){

@@ -16,17 +16,20 @@ public class Melon {
     private final int id;
 
     public Melon(float x, float y, int id){
+        //textures
         img=new Texture(Gdx.files.internal("melon.png"));
         imgR=new TextureRegion(img,0,0,104,114);
 
         this.id=id;
 
+        //hitbox
         rect=new Rectangle();
         rect.width=104;
         rect.height=114;
         rect.x=x-rect.width/2;
         rect.y=y-rect.height/2;
 
+        //physics
         falling=true;
         rotation=0;
         velocityUP=0;
@@ -58,6 +61,7 @@ public class Melon {
                 rotation-=10*dt;
             }
         }
+        //gravity border
         if(rect.y<=0){
             rect.y=0;
             velocityUP=0;

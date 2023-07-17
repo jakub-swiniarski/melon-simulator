@@ -39,8 +39,8 @@ public class Melon {
         rect.y+rect.height>0 && rect.y<Gdx.graphics.getHeight()){
             // ----------IMPORTANT----------
             // ORIGIN X AND ORIGIN Y ARE
-            // USED TO SHIFT THE ROTATION
-            // AXIS!!!
+            // USED TO SHIFT THE IMAGE
+            // ROTATION AXIS!!!
             //------------------------------
             batch.draw(imgR,rect.x,rect.y,rect.width/2,rect.height/2,rect.width,rect.height,1,1,rotation);
         }

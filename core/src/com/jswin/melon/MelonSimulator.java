@@ -68,7 +68,7 @@ public class MelonSimulator extends ApplicationAdapter {
 	public void dispose () {
 		batch.dispose();
 		for (Melon m : melon) {
-			m.dispose();
+		 	m.dispose();
 		}
 	}
 }

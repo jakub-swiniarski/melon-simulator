@@ -1,10 +1,12 @@
 package com.jswin.melon;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector3;
 
 public class Melon {
     private final Rectangle rect;
@@ -100,7 +102,7 @@ public class Melon {
         img.dispose();
     }
 
-    public void checkForCollisions(Melon m){
+    public void collisionCheck(Melon m){
         if(rect.overlaps(m.rect) && id!=m.id){
             //retarded, fix later
             if(rect.x>m.rect.x){
@@ -122,4 +124,11 @@ public class Melon {
             }
         }
     }
+
+    /*public void grabCheck(float x, float y){
+        if(rect.contains(x,y)){
+            rect.x=x;
+            rect.y=y;
+        }
+    }*/
 }

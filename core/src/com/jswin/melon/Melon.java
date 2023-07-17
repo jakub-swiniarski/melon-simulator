@@ -93,7 +93,6 @@ public class Melon {
         rotation-=0.05*velocityRIGHT;
 
         //BOUNCE UP AFTER FALLING
-        //ROTATE WHEN MOVING
         //LEFT CLICK - PICK MELON UP
     }
 

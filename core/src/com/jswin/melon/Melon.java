@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.math.Vector2;
 
 public class Melon {
     private final Rectangle rect;
@@ -92,7 +91,7 @@ public class Melon {
 
         //rotate when moving horizontally
         rotation-=0.05*velocityRIGHT;
-        
+
         //MELONS SHOULD EXPLODE IF THEY HIT SOMETHING AT HIGH SPEED
     }
 

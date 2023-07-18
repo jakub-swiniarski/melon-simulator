@@ -32,6 +32,11 @@ public class MelonSimulator extends ApplicationAdapter {
 		ScreenUtils.clear(0, 0, 0, 1);
 		dt=Gdx.graphics.getDeltaTime();
 
+		//grab and move melons around
+		if(Gdx.input.isButtonPressed(Input.Buttons.LEFT)){
+			System.out.println("clicked");
+		}
+
 		//spawn melons
 		if(Gdx.input.isButtonJustPressed(Input.Buttons.RIGHT)){
 			mousePos=new Vector2(Gdx.input.getX(),Gdx.graphics.getHeight()-Gdx.input.getY());
@@ -43,6 +48,7 @@ public class MelonSimulator extends ApplicationAdapter {
 		//fullscreen on/off
 		//----------------------------------------------------------------------
 		//TURNED OFF CUZ MELONS SPAWN IN THE WRONG PLACE WHEN IN FULLSCREEN
+		//THIS ALSO HAPPENS WHEN THE WINDOW IS MAXIMIZED
 		//----------------------------------------------------------------------
 		/*if(Gdx.input.isKeyJustPressed(Input.Keys.F11)){
 			fullscreen=!fullscreen;

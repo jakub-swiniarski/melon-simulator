@@ -65,7 +65,7 @@ public class Melon {
         //gravity border
         if(rect.y<=0){
             rect.y=0;
-            velocityUP=0;
+            velocityUP*=-0.5;
         }
 
         //update position
@@ -92,8 +92,7 @@ public class Melon {
 
         //rotate when moving horizontally
         rotation-=0.05*velocityRIGHT;
-
-        //BOUNCE UP AFTER FALLING
+        
         //MELONS SHOULD EXPLODE IF THEY HIT SOMETHING AT HIGH SPEED
     }
 

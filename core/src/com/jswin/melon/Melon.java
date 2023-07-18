@@ -94,7 +94,7 @@ public class Melon {
         rotation-=0.05*velocityRIGHT;
 
         //BOUNCE UP AFTER FALLING
-        //LEFT CLICK - PICK MELON UP
+        //MELONS SHOULD EXPLODE IF THEY HIT SOMETHING AT HIGH SPEED
     }
 
     public void dispose(){

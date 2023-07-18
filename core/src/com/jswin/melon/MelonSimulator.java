@@ -4,7 +4,7 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 import java.util.ArrayList;
@@ -14,9 +14,9 @@ public class MelonSimulator extends ApplicationAdapter {
 	SpriteBatch batch;
 	boolean fullscreen;
 	List<Melon> melon;
-	Vector2 mousePos;
 	float dt;
 	int id;
+	public Rectangle mouse;
 
 	@Override
 	public void create () {
@@ -25,6 +25,10 @@ public class MelonSimulator extends ApplicationAdapter {
 
 		melon=new ArrayList<Melon>();
 		id=0;
+
+		mouse= new Rectangle();
+		mouse.width=1;
+		mouse.height=1;
 	}
 
 	@Override
@@ -32,15 +36,19 @@ public class MelonSimulator extends ApplicationAdapter {
 		ScreenUtils.clear(0, 0, 0, 1);
 		dt=Gdx.graphics.getDeltaTime();
 
+		mouse.x=Gdx.input.getX();
+		mouse.y=Gdx.graphics.getHeight()-Gdx.input.getY();
+
 		//grab and move melons around
 		if(Gdx.input.isButtonPressed(Input.Buttons.LEFT)){
-			System.out.println("clicked");
+			for(Melon m: melon){
+				m.grabCheck(mouse);
+			}
 		}
 
 		//spawn melons
 		if(Gdx.input.isButtonJustPressed(Input.Buttons.RIGHT)){
-			mousePos=new Vector2(Gdx.input.getX(),Gdx.graphics.getHeight()-Gdx.input.getY());
-			Melon newMelon = new Melon(mousePos.x, mousePos.y,id);
+			Melon newMelon = new Melon(mouse.x, mouse.y,id);
 			melon.add(newMelon);
 			id++;
 		}

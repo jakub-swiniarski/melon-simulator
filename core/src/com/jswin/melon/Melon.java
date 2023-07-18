@@ -1,12 +1,11 @@
 package com.jswin.melon;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.math.Vector2;
 
 public class Melon {
     private final Rectangle rect;
@@ -122,6 +121,13 @@ public class Melon {
                 velocityUP-=Math.abs(rect.y-m.rect.y);
                 m.velocityUP+=Math.abs(rect.y-m.rect.y);
             }
+        }
+    }
+
+    public void grabCheck(Rectangle mouse){
+        if(rect.overlaps(mouse)){
+            rect.x=mouse.x-rect.width/2;
+            rect.y=mouse.y-rect.height/2;
         }
     }
 }

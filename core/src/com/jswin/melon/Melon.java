@@ -124,11 +124,4 @@ public class Melon {
             }
         }
     }
-
-    /*public void grabCheck(float x, float y){
-        if(rect.contains(x,y)){
-            rect.x=x;
-            rect.y=y;
-        }
-    }*/
 }
